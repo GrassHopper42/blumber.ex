@@ -37,9 +37,18 @@ defmodule Blumber.Accounts.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, [:username, :email, :password])
+    |> validate_username(opts)
     |> validate_email(opts)
     |> validate_password(opts)
+  end
+
+  defp validate_username(changeset, _opts) do
+    changeset
+    |> validate_required([:username])
+    |> validate_length(:username, min: 2, max: 20)
+    |> validate_format(:username, ~r/^[a-zA-Z0-9_]+$/)
+    |> unique_constraint(:username)
   end
 
   defp validate_email(changeset, opts) do
