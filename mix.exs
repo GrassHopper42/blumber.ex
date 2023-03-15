@@ -51,7 +51,8 @@ defmodule Blumber.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:phoenix_storybook, "~> 0.5.0"}
+      {:phoenix_storybook, "~> 0.5.0"},
+      {:ecto_psql_extras, "~> 0.7.10"}
     ]
   end
 
