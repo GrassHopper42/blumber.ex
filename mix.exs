@@ -52,7 +52,9 @@ defmodule Blumber.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:phoenix_storybook, "~> 0.5.0"},
-      {:ecto_psql_extras, "~> 0.7.10"}
+      {:ecto_psql_extras, "~> 0.7.10"},
+      {:earmark, "~> 1.4"},
+      {:html_sanitize_ex, "~> 1.4"}
     ]
   end
 
