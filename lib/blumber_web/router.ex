@@ -26,8 +26,9 @@ defmodule BlumberWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/posts", PostController, :post
 
-    live_storybook "/storybook", backend_module: BlumberWeb.Storybook
+    live_storybook("/storybook", backend_module: BlumberWeb.Storybook)
   end
 
   # Other scopes may use custom stacks.
